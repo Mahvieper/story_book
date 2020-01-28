@@ -15,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer(Duration(seconds: 3), () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage())) );
+    Timer(Duration(seconds: 15), () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage())) );
   }
 
   @override
@@ -25,9 +25,9 @@ class _SplashScreenState extends State<SplashScreen> {
         children: <Widget>[
          // Image.asset("asset/splashPage.gif")
           Container(
-              height: 700,
+              height: 900,
               child: Image(
-                image: AssetImage("asset/splashPage.png"),
+                image: AssetImage("asset/SplashScreen.png"),
                 fit: BoxFit.fill,
               )),
               //Image.asset("asset/splashPage.gif"))
