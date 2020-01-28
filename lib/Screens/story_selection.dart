@@ -23,7 +23,8 @@ class StoryPage extends StatelessWidget {
               children: <Widget>[
                 Image.asset("asset/story_school_drawer.jpg"),
                 ListTile(
-                  title: Text('Story 1',style: TextStyle(color: Colors.orange),),
+                  leading: Icon(Icons.star),
+                  title: Text('Story 1',style: TextStyle(color: Colors.orange,fontSize: 20),),
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => StoryPage()));
                   },

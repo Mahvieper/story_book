@@ -6,8 +6,8 @@ class Stories extends StatefulWidget {
 }
 
 class _StoriesState extends State<Stories> {
-  String imageAsset="asset/Story_Page_1.png";
-  List<String> storyPages = ["asset/homePage.png","asset/splashPage.png","asset/Story_Page_1.png"];
+  String imageAsset= "asset/Story_Page_1.png";//="asset/Story_Page_1.png";
+  List<String> storyPages = ["asset/Story_Page_1.png","asset/STORY_PAGE_2.png","asset/STORY_PAGE_3.png"];
   int index = 0;
   @override
   Widget build(BuildContext context) {
