@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter/services.dart';
+import 'package:story_book/Screens/home_page.dart';
 import 'Screens/splash_screen.dart';
+import 'Screens/story_pages/stories.dart';
+import 'Screens/story_selection.dart';
 
 void main() => runApp(MyApp());
 
@@ -17,6 +20,11 @@ class _MyAppState extends State<MyApp> {
         brightness:     Brightness.light,
       ),
       debugShowCheckedModeBanner: false,
+      routes: <String, WidgetBuilder> {
+        '/homePage': (BuildContext context) => new HomePage(),
+        '/StorySelection': (BuildContext context) => new StoryPage(),
+        //'/dashboardscreen': (BuildContext context) => new DashboardScreen()
+      },
       home: SplashScreen(),
     );
   }
