@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class StoryPage15 extends StatefulWidget {
+  Image myImageGet;
+  StoryPage15(this.myImageGet);
   @override
   _StoryPage15State createState() => _StoryPage15State();
 }
@@ -10,7 +12,20 @@ class _StoryPage15State extends State<StoryPage15> {
   String _narrator = "Malaak listens to her daddy and mummy. She finally understands.";
   List<String> _narratorList = ["She gives her daddy and mummy a big hug, and runs to her room to have fun, and play with her brother Ibrahim.(She runs outside with Ibrahim to play and have fun)"];
   int index = 0;
+  Image myImage;
 
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+   // myImage= Image.asset(imageAsset);
+  }
+
+  @override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+    //precacheImage(myImage.image, context);
+  }
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -33,7 +48,7 @@ class _StoryPage15State extends State<StoryPage15> {
                     context: context,
                     builder: (BuildContext context){
                       return AlertDialog(
-                        title: Text("Alert Dialog"),
+                        title: Text("Thanks for Reading!"),
                         content: Text("Story Completed"),
                       );
                     }
@@ -52,7 +67,8 @@ class _StoryPage15State extends State<StoryPage15> {
                       height: MediaQuery.of(context).size.height,
                       width: MediaQuery.of(context).size.width,
                       child: Image(
-                        image: AssetImage(imageAsset),
+                        gaplessPlayback: true,
+                        image: widget.myImageGet.image,
                         fit: BoxFit.fill,
                       ),
                     ),

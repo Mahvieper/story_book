@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:story_book/Screens/story_pages/story_page_5.dart';
 
 class StoryPage4 extends StatefulWidget {
+  Image myImageGet;
+
+  StoryPage4(this.myImageGet);
+
   @override
   _StoryPage4State createState() => _StoryPage4State();
 }
@@ -11,7 +15,20 @@ class _StoryPage4State extends State<StoryPage4> {
   String _narrator = "BABA ABOOD Says : That is so sweet of you if you want to cook food, but my dear, you don’t need to be all grown up to help your mummy.For now, you can help your mummy in other things, like washing vegetables.";
   List<String> _narratorList = ["Malaak : I don’t want to just wash vegetables!"];
   int index = 0;
+  Image myImage;
 
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    myImage= Image.asset("asset/STORY_PAGE_5.png");
+  }
+
+  @override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+    precacheImage(myImage.image, context);
+  }
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -30,7 +47,7 @@ class _StoryPage4State extends State<StoryPage4> {
             },
             onPanUpdate: (details) {
               if (details.delta.dx < 0) {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => StoryPage5()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => StoryPage5(myImage)));
               }else {
                 Navigator.pop(context);
               }
@@ -45,7 +62,8 @@ class _StoryPage4State extends State<StoryPage4> {
                       height: MediaQuery.of(context).size.height,
                       width: MediaQuery.of(context).size.width,
                       child: Image(
-                        image: AssetImage(imageAsset),
+                        gaplessPlayback: true,
+                        image: widget.myImageGet.image,
                         fit: BoxFit.fill,
                       ),
                     ),

@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:story_book/Screens//story_pages/story_page_3.dart';
 
 class StoryPage2 extends StatefulWidget {
+  Image myImageGet;
+
+  StoryPage2(this.myImageGet);
+
   @override
   _StoryPage2State createState() => _StoryPage2State();
 }
@@ -12,6 +16,20 @@ class _StoryPage2State extends State<StoryPage2> {
   List<String> _narratorList = ["Malaak : Here you go daddy.","BABA ABOOD : Thanks a lot, my little darling daughter.",
     "Malaak: Daddy!","BABA ABOOD : Yes Malaak","Malaak : I want to grow up fast!"];
   int index = 0;
+  Image myImage;
+
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    myImage=Image.asset("asset/STORY_PAGE_3.png");
+  }
+
+  @override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+    precacheImage(myImage.image, context);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +49,7 @@ class _StoryPage2State extends State<StoryPage2> {
             },
             onPanUpdate: (details) {
               if (details.delta.dx < 0) {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => StoryPage3()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => StoryPage3(myImage)));
               }else {
                 Navigator.pop(context);
               }
@@ -46,7 +64,8 @@ class _StoryPage2State extends State<StoryPage2> {
                       height: MediaQuery.of(context).size.height,
                       width: MediaQuery.of(context).size.width,
                       child: Image(
-                        image: AssetImage(imageAsset),
+                        gaplessPlayback: true,
+                        image: widget.myImageGet.image,
                         fit: BoxFit.fill,
                       ),
                     ),
