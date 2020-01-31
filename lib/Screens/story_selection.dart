@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'file:///C:/Workspace/brew_crew/story_book/lib/Screens/story_pages/stories.dart';
+
+import 'story_pages/stories.dart';
+
 
 class StoryPage extends StatefulWidget {
   @override
