@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:story_book/Screens/story_pages/story_page_4.dart';
 
+import 'story_page_2.dart';
+
 class StoryPage3 extends StatefulWidget {
   @override
   _StoryPage3State createState() => _StoryPage3State();
@@ -29,9 +31,9 @@ class _StoryPage3State extends State<StoryPage3> {
             },
             onPanUpdate: (details) {
               if (details.delta.dx < 0) {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => StoryPage4()));
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => StoryPage4()));
               }else {
-                Navigator.pop(context);
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => StoryPage2()));
               }
             },
 

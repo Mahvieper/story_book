@@ -29,7 +29,7 @@ class _StoriesState extends State<Stories> {
         child: GestureDetector(
           onPanUpdate: (details) {
             if (details.delta.dx < 0) { // For Right Swipe Direction
-              Navigator.push(context, MaterialPageRoute(builder: (context) => StoryPage2()));
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => StoryPage2()));
             }else {
 
             }

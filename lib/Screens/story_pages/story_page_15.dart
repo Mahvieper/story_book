@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:story_book/Screens/story_pages/story_page_14.dart';
 
 class StoryPage15 extends StatefulWidget {
   @override
@@ -33,13 +34,13 @@ class _StoryPage15State extends State<StoryPage15> {
                     context: context,
                     builder: (BuildContext context){
                       return AlertDialog(
-                        title: Text("Alert Dialog"),
+                        title: Text("Thank you for Reading"),
                         content: Text("Story Completed"),
                       );
                     }
                 );
               }else {
-                Navigator.pop(context);
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => StoryPage14()));
               }
             },
 

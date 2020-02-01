@@ -25,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
     ]);
     SystemChrome.setEnabledSystemUIOverlays([]); // To Hide the Status Bar
     //Timer(Duration(seconds: 10), () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage())) );
-    Timer(Duration(seconds: 10), () => Navigator.pushNamed(context, '/homePage') );
+    Timer(Duration(seconds: 10), () => Navigator.pushReplacementNamed(context, '/homePage') );
   }
 
   @override

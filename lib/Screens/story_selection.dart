@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'file:///C:/Workspace/brew_crew/story_book/lib/Screens/story_pages/stories.dart';
+
+import 'story_pages/stories.dart';
 
 class StoryPage extends StatefulWidget {
   @override
@@ -76,7 +77,7 @@ class _StoryPageState extends State<StoryPage> {
                 top: MediaQuery.of(context).size.width * 0.16 ,
               child: Container(
                   margin: EdgeInsets.only(left: 20),
-                  child: Text("Baba Abood",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black,fontFamily: "Dancing Script"),))
+                  child: Text("Growing Up!",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black,fontFamily: "Dancing Script"),))
         )
 
 
