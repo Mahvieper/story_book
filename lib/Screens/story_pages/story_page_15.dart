@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:story_book/Screens/story_pages/story_page_14.dart';
 
 class StoryPage15 extends StatefulWidget {
@@ -11,6 +12,16 @@ class _StoryPage15State extends State<StoryPage15> {
   String _narrator = "Malaak listens to her daddy and mummy. She finally understands.";
   List<String> _narratorList = ["She gives her daddy and mummy a big hug, and runs to her room to have fun, and play with her brother Ibrahim.(She runs outside with Ibrahim to play and have fun)"];
   int index = 0;
+  Image myImage;
+
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeRight,
+      DeviceOrientation.landscapeLeft,
+    ]);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -53,6 +64,7 @@ class _StoryPage15State extends State<StoryPage15> {
                       height: MediaQuery.of(context).size.height,
                       width: MediaQuery.of(context).size.width,
                       child: Image(
+                        gaplessPlayback: true,
                         image: AssetImage(imageAsset),
                         fit: BoxFit.fill,
                       ),

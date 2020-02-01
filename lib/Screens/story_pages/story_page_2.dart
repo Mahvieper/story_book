@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:story_book/Screens//story_pages/story_page_3.dart';
 import 'package:story_book/Screens/story_pages/stories.dart';
 
 class StoryPage2 extends StatefulWidget {
+
+
   @override
   _StoryPage2State createState() => _StoryPage2State();
 }
@@ -13,6 +16,17 @@ class _StoryPage2State extends State<StoryPage2> {
   List<String> _narratorList = ["Malaak : Here you go daddy.","BABA ABOOD : Thanks a lot, my little darling daughter.",
     "Malaak: Daddy!","BABA ABOOD : Yes Malaak","Malaak : I want to grow up fast!"];
   int index = 0;
+  Image myImage;
+
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeRight,
+      DeviceOrientation.landscapeLeft,
+    ]);
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +47,7 @@ class _StoryPage2State extends State<StoryPage2> {
             onPanUpdate: (details) {
               if (details.delta.dx < 0) {
                 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => StoryPage3()));
+
               }else {
                 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Stories()));
               }
@@ -47,6 +62,7 @@ class _StoryPage2State extends State<StoryPage2> {
                       height: MediaQuery.of(context).size.height,
                       width: MediaQuery.of(context).size.width,
                       child: Image(
+                        gaplessPlayback: true,
                         image: AssetImage(imageAsset),
                         fit: BoxFit.fill,
                       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:story_book/Screens/story_pages/story_page_6.dart';
 import 'package:story_book/Screens/story_pages/story_page_8.dart';
 
@@ -12,6 +13,16 @@ class _StoryPage7State extends State<StoryPage7> {
   String _narrator = "Ibrahim is about to catch Malaak when she runs to daddy, and hides behind him. ";
   List<String> _narratorList = ["Ibrahim is about to catch Malaak when she runs to daddy, and hides behind him."];
   int index = 0;
+  Image myImage;
+
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeRight,
+      DeviceOrientation.landscapeLeft,
+    ]);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +57,7 @@ class _StoryPage7State extends State<StoryPage7> {
                       height: MediaQuery.of(context).size.height,
                       width: MediaQuery.of(context).size.width,
                       child: Image(
+                        gaplessPlayback: true,
                         image: AssetImage(imageAsset),
                         fit: BoxFit.fill,
                       ),

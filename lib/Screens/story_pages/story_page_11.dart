@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:story_book/Screens/story_pages/story_page_10.dart';
 import 'package:story_book/Screens/story_pages/story_page_12.dart';
 
@@ -12,6 +13,16 @@ class _StoryPage11State extends State<StoryPage11> {
   String _narrator = "While sleeping, Malaak has a dream. She dreams she has grown up in size, so big that everyone is running away from her.";
   List<String> _narratorList = [" Everyone thinks she is a monster","She has changed!","She is not small, she is gigantic!","Her hands, and feet are enormous!"];
   int index = 0;
+  Image myImage;
+
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeRight,
+      DeviceOrientation.landscapeLeft,
+    ]);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +57,7 @@ class _StoryPage11State extends State<StoryPage11> {
                       height: MediaQuery.of(context).size.height,
                       width: MediaQuery.of(context).size.width,
                       child: Image(
+                        gaplessPlayback: true,
                         image: AssetImage(imageAsset),
                         fit: BoxFit.fill,
                       ),

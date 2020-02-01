@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:story_book/Screens/story_pages/story_page_10.dart';
 import 'package:story_book/Screens/story_pages/story_page_8.dart';
 
@@ -12,6 +13,18 @@ class _StoryPage9State extends State<StoryPage9> {
   String _narrator = "Mummy comes to the sitting room, and tells Malaak to be patient.";
   List<String> _narratorList = ["Mummy Says : Malaak this is the time for you to be young, carefree, and have fun. Play with your toys and run around. "];
   int index = 0;
+  Image myImage;
+
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeRight,
+      DeviceOrientation.landscapeLeft,
+    ]);
+  }
+
+  @override
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +45,7 @@ class _StoryPage9State extends State<StoryPage9> {
             onPanUpdate: (details) {
               if (details.delta.dx < 0) {
                 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => StoryPage10()));
+
               }else {
                 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => StoryPage8()));
               }
@@ -46,6 +60,7 @@ class _StoryPage9State extends State<StoryPage9> {
                       height: MediaQuery.of(context).size.height,
                       width: MediaQuery.of(context).size.width,
                       child: Image(
+                        gaplessPlayback: true,
                         image: AssetImage(imageAsset),
                         fit: BoxFit.fill,
                       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:story_book/Screens/story_pages/story_page_7.dart';
 import 'package:story_book/Screens/story_pages/story_page_9.dart';
 
@@ -12,6 +13,16 @@ class _StoryPage8State extends State<StoryPage8> {
   String _narrator = "Malaak is so desperate to grow up. She loves watching her mummy, and wants to be just like her mummy. But no one seems to understand.";
   List<String> _narratorList = ["Malaak Says : Everyone… daddy, mummy, Ibrahim just don’t understand."];
   int index = 0;
+  Image myImage;
+
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeRight,
+      DeviceOrientation.landscapeLeft,
+    ]);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +42,7 @@ class _StoryPage8State extends State<StoryPage8> {
             },
             onPanUpdate: (details) {
               if (details.delta.dx < 0) {
+
                 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => StoryPage9()));
               }else {
                 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => StoryPage7()));
@@ -46,6 +58,7 @@ class _StoryPage8State extends State<StoryPage8> {
                       height: MediaQuery.of(context).size.height,
                       width: MediaQuery.of(context).size.width,
                       child: Image(
+                        gaplessPlayback: true,
                         image: AssetImage(imageAsset),
                         fit: BoxFit.fill,
                       ),

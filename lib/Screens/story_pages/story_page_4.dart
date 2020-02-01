@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:story_book/Screens/story_pages/story_page_3.dart';
 import 'package:story_book/Screens/story_pages/story_page_5.dart';
 
@@ -12,6 +13,16 @@ class _StoryPage4State extends State<StoryPage4> {
   String _narrator = "BABA ABOOD Says : That is so sweet of you if you want to cook food, but my dear, you don’t need to be all grown up to help your mummy.For now, you can help your mummy in other things, like washing vegetables.";
   List<String> _narratorList = ["Malaak : I don’t want to just wash vegetables!"];
   int index = 0;
+  Image myImage;
+
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeRight,
+      DeviceOrientation.landscapeLeft,
+    ]);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +42,8 @@ class _StoryPage4State extends State<StoryPage4> {
             },
             onPanUpdate: (details) {
               if (details.delta.dx < 0) {
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => StoryPage5()));
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => StoryPage5()));
+
               }else {
                 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => StoryPage3()));
               }
@@ -46,6 +58,7 @@ class _StoryPage4State extends State<StoryPage4> {
                       height: MediaQuery.of(context).size.height,
                       width: MediaQuery.of(context).size.width,
                       child: Image(
+                        gaplessPlayback: true,
                         image: AssetImage(imageAsset),
                         fit: BoxFit.fill,
                       ),

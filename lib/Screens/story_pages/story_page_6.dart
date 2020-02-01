@@ -12,6 +12,12 @@ class _StoryPage6State extends State<StoryPage6> {
   String _narrator = "Ibrahim says : Daddy let’s stretch Malaak, so she can grow up fast. You hold her arms, and I will hold her legs.";
   List<String> _narratorList = ["Ibrahim says : Daddy let’s stretch Malaak, so she can grow up fast. You hold her arms, and I will hold her legs."];
   int index = 0;
+  Image myImage;
+
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +52,8 @@ class _StoryPage6State extends State<StoryPage6> {
                       height: MediaQuery.of(context).size.height,
                       width: MediaQuery.of(context).size.width,
                       child: Image(
-                        image: AssetImage(imageAsset),
+                        gaplessPlayback: true,
+                        image:AssetImage(imageAsset),
                         fit: BoxFit.fill,
                       ),
                     ),

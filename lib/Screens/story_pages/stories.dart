@@ -11,6 +11,8 @@ class _StoriesState extends State<Stories> {
   String imageAsset= "asset/Story_Page_1.png";//="asset/Story_Page_1.png";
   String _narrator = "Daddy has arrived home early from his work. Kids are playing in the sitting room, and mummy is making food in the kitchen.";
   String _babaAbood = "BABA ABOOD Says : Can someone please bring me a glass of water?";
+  Image myImage,myImage2;
+
 
   @override
   void initState() {
@@ -21,6 +23,7 @@ class _StoriesState extends State<Stories> {
       DeviceOrientation.landscapeLeft,
     ]);
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +47,7 @@ class _StoriesState extends State<Stories> {
                     height: MediaQuery.of(context).size.height,
                     width: MediaQuery.of(context).size.width,
                     child: Image(
+                      gaplessPlayback: true,
                       image: AssetImage(imageAsset),
                       fit: BoxFit.fill,
                     ),

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:story_book/Screens/story_pages/story_page_4.dart';
 
 import 'story_page_2.dart';
 
 class StoryPage3 extends StatefulWidget {
+
   @override
   _StoryPage3State createState() => _StoryPage3State();
 }
@@ -13,6 +15,18 @@ class _StoryPage3State extends State<StoryPage3> {
   String _narrator = "BABA ABOOD Says : Why does my daughter want to grow up so fast?";
   List<String> _narratorList = ["Malaak : Because I want to cook yummy food like mummy does."];
   int index = 0;
+  Image myImage,myImage2;
+
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeRight,
+      DeviceOrientation.landscapeLeft,
+    ]);
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -32,6 +46,7 @@ class _StoryPage3State extends State<StoryPage3> {
             onPanUpdate: (details) {
               if (details.delta.dx < 0) {
                 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => StoryPage4()));
+
               }else {
                 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => StoryPage2()));
               }
@@ -46,6 +61,7 @@ class _StoryPage3State extends State<StoryPage3> {
                       height: MediaQuery.of(context).size.height,
                       width: MediaQuery.of(context).size.width,
                       child: Image(
+                        gaplessPlayback: true,
                         image: AssetImage(imageAsset),
                         fit: BoxFit.fill,
                       ),
