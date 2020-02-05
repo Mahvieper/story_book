@@ -38,10 +38,22 @@ class _StoryPage15State extends State<StoryPage15> {
               setState(() {
                 if(index < _narratorList.length)
                   _narrator = _narratorList[index % _narratorList.length];
+                else
+                  {
+                    showDialog(
+                        context: context,
+                        builder: (BuildContext context){
+                          return AlertDialog(
+                            title: Text("Thank you for Reading"),
+                            content: Text("Story Completed"),
+                          );
+                        }
+                    );
+                  }
                 index++;
               });
             },
-            onPanUpdate: (details) {
+           /* onPanUpdate: (details) {
               if (details.delta.dx < 0) {
                 showDialog(
                     context: context,
@@ -55,7 +67,7 @@ class _StoryPage15State extends State<StoryPage15> {
               }else {
                 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => StoryPage14()));
               }
-            },
+            },*/
 
             child: Container(
                 height: MediaQuery.of(context).size.height,

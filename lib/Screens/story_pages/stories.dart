@@ -32,6 +32,9 @@ class _StoriesState extends State<Stories> {
     return  Scaffold(
       body: SafeArea(
         child: GestureDetector(
+          onTap: () {
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => StoryPage2()));
+          },
           onPanUpdate: (details) {
             if (details.delta.dx < 0) { // For Right Swipe Direction
               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => StoryPage2()));
