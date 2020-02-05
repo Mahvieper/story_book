@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:story_book/Screens/story_pages/story_page_4.dart';
+import 'package:story_book/size_config.dart';
 
 import 'story_page_2.dart';
 
@@ -29,6 +30,8 @@ class _StoryPage3State extends State<StoryPage3> {
 
   @override
   Widget build(BuildContext context) {
+
+    SizeConfig().init(context);
     return WillPopScope(
       onWillPop: () {
         Navigator.popUntil(context, ModalRoute.withName('/homePage'));
@@ -74,7 +77,7 @@ class _StoryPage3State extends State<StoryPage3> {
                           decoration: BoxDecoration(
                               color: Colors.white
                           ),
-                          child: Text(_narrator,style: TextStyle(fontSize: 18,color: Colors.black),)),
+                          child: Text(_narrator,style: TextStyle(fontSize: SizeConfig.safeBlockHorizontal+8,color: Colors.black),)),
                     ),
 
                   ],
