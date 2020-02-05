@@ -37,17 +37,19 @@ class _StoryPage10State extends State<StoryPage10> {
               setState(() {
                 if(index < _narratorList.length)
                   _narrator = _narratorList[index % _narratorList.length];
+                else
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => StoryPage11()));
                 index++;
               });
             },
-            onPanUpdate: (details) {
+           /* onPanUpdate: (details) {
               if (details.delta.dx < 0) {
                 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => StoryPage11()));
 
               }else {
                 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => StoryPage9()));
               }
-            },
+            },*/
 
             child: Container(
                 height: MediaQuery.of(context).size.height,

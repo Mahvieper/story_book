@@ -40,17 +40,20 @@ class _StoryPage3State extends State<StoryPage3> {
               setState(() {
                 if(index < _narratorList.length)
                 _narrator = _narratorList[index % _narratorList.length];
+                else
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => StoryPage4()));
                 index++;
               });
             },
-            onPanUpdate: (details) {
+
+           /* onPanUpdate: (details) {
               if (details.delta.dx < 0) {
                 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => StoryPage4()));
 
               }else {
                 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => StoryPage2()));
               }
-            },
+            },*/
 
             child: Container(
                 height: MediaQuery.of(context).size.height,
