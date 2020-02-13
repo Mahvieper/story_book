@@ -13,9 +13,9 @@ class StoryPage2 extends StatefulWidget {
 
 class _StoryPage2State extends State<StoryPage2> {
   String imageAsset= "asset/STORY_PAGE_2.png";//="asset/Story_Page_1.png";
-  String _narrator = "Malaak brings her daddy a glass of water";
-  List<String> _narratorList = ["Malaak : Here you go daddy.","BABA ABOOD : Thanks a lot, my little darling daughter.",
-    "Malaak: Daddy!","BABA ABOOD : Yes Malaak","Malaak : I want to grow up fast!"];
+  String _narrator = "Lana brings her daddy a glass of water";
+  List<String> _narratorList = ["Lana : Here you go daddy.","BABA ABOOD : Thanks a lot, my little darling daughter.",
+    "Lana: Daddy!","BABA ABOOD : Yes Lana","Lana : I want to grow up fast!"];
   int index = 0;
   Image myImage;
 

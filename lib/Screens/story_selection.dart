@@ -42,9 +42,22 @@ class _StoryPageState extends State<StoryPage> {
                   fit: BoxFit.fill,
                 ),
               ),
+
+              Align(
+              alignment: Alignment.topLeft,
+              child: Container(
+                  padding: EdgeInsets.all(20),
+                  child: InkWell(
+                      onTap: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Icon(Icons.arrow_back,color: Colors.white,size: 30,))),
+
+              ),
+
               Container(
-                  margin: EdgeInsets.fromLTRB(0, MediaQuery.of(context).size.width*0.1, 0,MediaQuery.of(context).size.width*0.30),
-                  height: SizeConfig.blockSizeVertical * 20,
+                  margin: EdgeInsets.fromLTRB(MediaQuery.of(context).size.width*0.01, MediaQuery.of(context).size.width*0.1, 0,MediaQuery.of(context).size.width*0.30),
+                  height: SizeConfig.blockSizeVertical * 40,
                   width: SizeConfig.blockSizeHorizontal * 20,
                   child: Column(
                     children: <Widget>[
@@ -54,10 +67,11 @@ class _StoryPageState extends State<StoryPage> {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => Stories()));
                       },),
                       SizedBox(height: 5,),
-                Text("Growing Up!",style: TextStyle(fontSize: SizeConfig.safeBlockHorizontal+6,fontWeight: FontWeight.bold,color: Colors.black,fontFamily: "Dancing Script"),
+                Text("Growing Up!",style: TextStyle(fontSize: SizeConfig.safeBlockHorizontal+10,fontWeight: FontWeight.bold,color: Colors.black,fontFamily: "Dancing Script"),
                 )
                     ],
-                  )),
+                  )
+              ),
           ]
         )
         ),

@@ -11,7 +11,7 @@ class StoryPage11 extends StatefulWidget {
 
 class _StoryPage11State extends State<StoryPage11> {
   String imageAsset= "asset/STORY_PAGE_11.png";//="asset/Story_Page_1.png";
-  String _narrator = "While sleeping, Malaak has a dream. She dreams she has grown up in size, so big that everyone is running away from her.";
+  String _narrator = "While sleeping, Lana has a dream. She dreams she has grown up in size, so big that everyone is running away from her.";
   List<String> _narratorList = [" Everyone thinks she is a monster","She has changed!","She is not small, she is gigantic!","Her hands, and feet are enormous!"];
   int index = 0;
   Image myImage;

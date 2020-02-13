@@ -10,9 +10,9 @@ class StoryPage12 extends StatefulWidget {
 
 class _StoryPage12State extends State<StoryPage12> {
   String imageAsset= "asset/STORY_PAGE_12.png";//="asset/Story_Page_1.png";
-  String _narrator = "Her friends, and family are so scared of her. They do not want Malaak to come close.";
-  List<String> _narratorList = ["Dad Character Says : Mummy... mummy… Ibrahim... daddy...please come here, please come back. I am not a monster."
-    ,"But no one comes back, everyone stays away from her.","Malaak says : Come back! Come back!"];
+  String _narrator = "Her friends, and family are so scared of her. They do not want Lana to come close.";
+  List<String> _narratorList = ["Mummy... mummy… Ibrahim... daddy...please come here, please come back. I am not a monster."
+    ,"But no one comes back, everyone stays away from her.","Lana says : Come back! Come back!"];
   int index = 0;
   Image myImage;
 

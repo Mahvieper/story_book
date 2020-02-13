@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:story_book/Screens/story_pages/story_page_14.dart';
@@ -10,8 +12,8 @@ class StoryPage15 extends StatefulWidget {
 
 class _StoryPage15State extends State<StoryPage15> {
   String imageAsset= "asset/STORY_PAGE_15.png";//="asset/Story_Page_1.png";
-  String _narrator = "Malaak listens to her daddy and mummy. She finally understands.";
-  List<String> _narratorList = ["She gives her daddy and mummy a big hug, and runs to her room to have fun, and play with her brother Ibrahim.(She runs outside with Ibrahim to play and have fun)"];
+  String _narrator = "Lana listens to her daddy and mummy. She finally understands.";
+  List<String> _narratorList = ["She gives her daddy and mummy a big hug, and runs outside to the back garden to play ball with her brother Ibrahim.(She runs outside with Ibrahim to play and have fun)"];
   int index = 0;
   Image myImage;
 
@@ -49,6 +51,16 @@ class _StoryPage15State extends State<StoryPage15> {
                           );
                         }
                     );
+                    Timer(Duration(seconds: 1), () =>   Navigator.popUntil(context, ModalRoute.withName('/StorySelection')) );
+                    /*showDialog(
+                        context: context,
+                        builder: (BuildContext context){
+                          return AlertDialog(
+                            title: Text("Thank you for Reading"),
+                            content: Text("Story Completed"),
+                          );
+                        }
+                    );*/
                   }
                 index++;
               });
