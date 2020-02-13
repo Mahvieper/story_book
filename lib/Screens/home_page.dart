@@ -9,6 +9,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  double heightSized;
   @override
   void initState() {
     // TODO: implement initState
@@ -21,6 +22,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
       body: SafeArea(
         child: Stack(
@@ -40,26 +42,34 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  SizedBox(height: 50,),
+                  SizedBox(height: SizeConfig.safeBlockHorizontal *10,),
                   Container(
-                    margin: EdgeInsets.only(right: 30),
-                    child: FlatButton(
-                      onPressed: () {
-                        // Navigator.push(context, MaterialPageRoute(builder: (context) => StoryPage()));
-                        Navigator.pushNamed(context, '/StorySelection');
-                      },
-                      color: Colors.transparent,
+                    margin: EdgeInsets.only(right: SizeConfig.safeBlockHorizontal*10),
+                    child: ButtonTheme(
+                      minWidth: SizeConfig.blockSizeHorizontal * 20.0,
+                      height: SizeConfig.blockSizeHorizontal * 7.0,
+                      child: FlatButton(
+                        onPressed: () {
+                          // Navigator.push(context, MaterialPageRoute(builder: (context) => StoryPage()));
+                          Navigator.pushNamed(context, '/StorySelection');
+                        },
+                        color: Colors.transparent,
+                      ),
                     ),
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(height: SizeConfig.safeBlockVertical * 2,),
                   Container(
-                    margin: EdgeInsets.only(right: 50),
-                    child: FlatButton(
-                      onPressed: () {
-                        // Navigator.push(context, MaterialPageRoute(builder: (context) => StoryPage()));
-                        Navigator.pushNamed(context, '/about_us');
-                      },
-                      color: Colors.transparent,
+                    margin: EdgeInsets.only(right: SizeConfig.safeBlockHorizontal * 10),
+                    child: ButtonTheme(
+                      minWidth: SizeConfig.blockSizeHorizontal * 20.0,
+                      height: SizeConfig.blockSizeHorizontal * 7.0,
+                      child: FlatButton(
+                        onPressed: () {
+                          // Navigator.push(context, MaterialPageRoute(builder: (context) => StoryPage()));
+                          Navigator.pushNamed(context, '/about_us');
+                        },
+                        color: Colors.transparent,
+                      ),
                     ),
                   ),
                 ],

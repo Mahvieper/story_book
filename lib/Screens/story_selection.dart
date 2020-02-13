@@ -51,7 +51,7 @@ class _StoryPageState extends State<StoryPage> {
                       onTap: () {
                         Navigator.of(context).pop();
                       },
-                      child: Icon(Icons.arrow_back,color: Colors.white,size: 30,))),
+                      child: Icon(Icons.arrow_back,color: Colors.white,size: SizeConfig.safeBlockHorizontal*5,))),
 
               ),
 
@@ -62,12 +62,12 @@ class _StoryPageState extends State<StoryPage> {
                   child: Column(
                     children: <Widget>[
                       FlatButton(color: Colors.transparent,
-                        child: Image.asset("asset/level.PNG",width: MediaQuery.of(context).size.width*0.15,height: MediaQuery.of(context).size.height*0.15,),
+                        child: Image.asset("asset/level.PNG",width: SizeConfig.safeBlockHorizontal*10,height: SizeConfig.safeBlockHorizontal*10,),
                         onPressed: () {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => Stories()));
                       },),
                       SizedBox(height: 5,),
-                Text("Growing Up!",style: TextStyle(fontSize: SizeConfig.safeBlockHorizontal+10,fontWeight: FontWeight.bold,color: Colors.black,fontFamily: "Dancing Script"),
+                Text("Growing Up!",style: TextStyle(fontSize: SizeConfig.safeBlockHorizontal+15,fontWeight: FontWeight.bold,color: Colors.black,fontFamily: "Dancing Script"),
                 )
                     ],
                   )

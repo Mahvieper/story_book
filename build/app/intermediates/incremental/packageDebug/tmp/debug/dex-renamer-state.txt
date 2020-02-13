@@ -1,4 +1,4 @@
-#Thu Feb 13 16:37:08 IST 2020
-base.0=C\:\\Workspace\\brew_crew\\story_book\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+#Thu Feb 13 20:34:13 IST 2020
+base.0=C\:\\Users\\maheshsharma\\AndroidStudioProjects\\StoryBookOffice\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

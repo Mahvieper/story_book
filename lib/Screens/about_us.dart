@@ -4,6 +4,7 @@ import 'package:story_book/size_config.dart';
 class AboutUs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
       body: SafeArea(
         child: Stack(
@@ -26,7 +27,7 @@ class AboutUs extends StatelessWidget {
                       onTap: () {
                         Navigator.of(context).pop();
                       },
-                      child: Icon(Icons.arrow_back,color: Colors.white,size: 30,))),
+                      child: Icon(Icons.arrow_back,color: Colors.white,size: SizeConfig.safeBlockHorizontal*5,))),
             ),
 
             Align(
