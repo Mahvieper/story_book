@@ -1,1 +1,1 @@
-{"mName":"debug","mStoreFile":"C:\\Users\\maheshsharma\\.android\\debug.keystore","mStorePassword":"android","mKeyAlias":"AndroidDebugKey","mKeyPassword":"android","mStoreType":"jks","mV1SigningEnabled":true,"mV2SigningEnabled":true}
+{"mName":"release","mStoreFile":"C:\\Users\\maheshsharma\\AndroidStudioProjects\\StoryBookOffice\\android\\app\\DIDKEY.jks","mStorePassword":"123456","mKeyAlias":"DIDKEY","mKeyPassword":"key123456","mStoreType":"jks","mV1SigningEnabled":true,"mV2SigningEnabled":true}

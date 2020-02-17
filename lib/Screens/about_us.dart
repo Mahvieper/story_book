@@ -33,14 +33,14 @@ class AboutUs extends StatelessWidget {
             Align(
                 alignment: Alignment.center,
                 child: Container(
-                  margin: EdgeInsets.fromLTRB(40, 100, 250, 150),
+                  margin: EdgeInsets.fromLTRB(40, 0, 250, 0),
                     padding: EdgeInsets.all(5),
                     decoration: BoxDecoration(
                         color: Colors.transparent
                     ),
                     child: Text("Welcome to the New World of Baba Abood! A safe and wholesome place for your kids to learn Islamic concepts. "
                         "Every month we will be adding new stories. For more information, or to get involved kindly email: info@babaabood.com"
-                      ,style: TextStyle(fontSize: SizeConfig.safeBlockHorizontal+15,color: Colors.black87,fontWeight: FontWeight.bold),)))
+                      ,style: TextStyle(fontSize: SizeConfig.safeBlockHorizontal+12,color: Colors.black87,fontWeight: FontWeight.bold),)))
           ],
 
         ),
